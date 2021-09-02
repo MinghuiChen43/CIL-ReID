@@ -1,6 +1,6 @@
 # Corruption Invariant Learning for Re-identification.
 
-***
+
 ## Evaluation Corruption Robustness On-the-fly
 
 #### Corruption Transform
@@ -66,10 +66,12 @@ We introduce a rain corruption type, which is a common type of weather condition
 
 
 ## Recent Advance in Person Re-ID
-<img src='./imgs/market.png' width=40%>
-<img src='./imgs/market_c.png' width=40%>
 
-***
+<table><tr>
+<td> <img src='./imgs/market.png' width=100%> </td>
+<td> <img src='./imgs/market_c.png' width=100%> </td>
+</tr></table>
+
 
 ## Learderboard
 
