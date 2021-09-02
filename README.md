@@ -1,6 +1,69 @@
 # Corruption Invariant Learning for Re-identification.
 
 ***
+## Evaluation Corruption Robustness On-the-fly
+
+#### Corruption Transform
+
+The main code of corruption transform. (See contextual code in ./datasets/make_dataloader.py, line 61)
+
+    from imagecorruptions.corruptions import *
+    corruption_function = [gaussian_noise, shot_noise, impulse_noise, defocus_blur,
+        glass_blur, motion_blur, zoom_blur, snow, frost, fog, brightness, contrast,
+        elastic_transform, pixelate, jpeg_compression, speckle_noise,
+        gaussian_blur, spatter, saturate, rain]
+    class corruption_transform(object):
+        def __init__(self, level=0, type='all'):
+            self.level = level
+            self.type = type
+
+        def __call__(self, img):
+            if self.level > 0 and self.level < 6:
+                level_idx = self.level
+            else:
+                level_idx = random.choice(range(1, 6))
+            if self.type == 'all':
+                corrupt_func = random.choice(corruption_function)
+            else:
+                func_name_list = [f.__name__ for f in corruption_function]
+                corrupt_idx = func_name_list.index(self.type)
+                corrupt_func = corruption_function[corrupt_idx]
+            c_img = corrupt_func(img.copy(), severity=level_idx)
+            img = Image.fromarray(np.uint8(c_img))
+            return img
+
+Evaluating corruption robustness can be realized on-the-fly by modifing the transform function uesed in test dataloader. (See details in ./datasets/make_dataloader.py, Line 236)
+
+        val_with_corruption_transforms = T.Compose([
+            corruption_transform(0),
+            T.Resize(cfg.INPUT.SIZE_TEST),
+            T.ToTensor(),])
+
+#### Rain details
+We introduce a rain corruption type, which is a common type of weather condition, but it is missed by the original corruption benchmark. (See details in ./datasets/make_dataloader.py, Line 29)
+
+    def rain(image, severity=1):
+        if severity == 1:
+            type = 'drizzle'
+        elif severity == 2 or severity == 3:
+            type = 'heavy'
+        elif severity == 4 or severity == 5:
+            type = 'torrential'
+        blur_value = 2 + severity
+        bright_value = -(0.05 + 0.05 * severity)
+        rain = abm.Compose([
+            abm.augmentations.transforms.RandomRain(rain_type=type, 
+            blur_value=blur_value, brightness_coefficient=1, always_apply=True),
+            abm.augmentations.transforms.RandomBrightness(limit=[bright_value, 
+            bright_value], always_apply=True)])
+        width, height = image.size
+        if height <= 60:
+            scale_factor = 65.0 / height
+            new_size = (int(width * scale_factor), 65)
+            image = image.resize(new_size)
+        return rain(image=np.array(image))['image']
+
+
 
 ## Recent Advance in Person Re-ID
 <img src='./imgs/market.png' width=45%>
