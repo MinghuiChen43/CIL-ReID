@@ -66,8 +66,8 @@ We introduce a rain corruption type, which is a common type of weather condition
 
 
 ## Recent Advance in Person Re-ID
-<img src='./imgs/market.png' width=45%>
-<img src='./imgs/market_c.png' width=45%>
+<img src='./imgs/market.png' width=40%>
+<img src='./imgs/market_c.png' width=40%>
 
 ***
 
