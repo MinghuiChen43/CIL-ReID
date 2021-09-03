@@ -7,35 +7,34 @@
 
 The main code of corruption transform. (See contextual code in ./datasets/make_dataloader.py, line 61)
 
-    ```python
-    from imagecorruptions.corruptions import *
+```python
+from imagecorruptions.corruptions import *
+
+corruption_function = [gaussian_noise, shot_noise, impulse_noise, defocus_blur,
+    glass_blur, motion_blur, zoom_blur, snow, frost, fog, brightness, contrast,
+    elastic_transform, pixelate, jpeg_compression, speckle_noise,
+    gaussian_blur, spatter, saturate, rain]
     
-    corruption_function = [gaussian_noise, shot_noise, impulse_noise, defocus_blur,
-        glass_blur, motion_blur, zoom_blur, snow, frost, fog, brightness, contrast,
-        elastic_transform, pixelate, jpeg_compression, speckle_noise,
-        gaussian_blur, spatter, saturate, rain]
-        
-    class corruption_transform(object):
-        def __init__(self, level=0, type='all'):
-            self.level = level
-            self.type = type
+class corruption_transform(object):
+    def __init__(self, level=0, type='all'):
+        self.level = level
+        self.type = type
 
-        def __call__(self, img):
-            if self.level > 0 and self.level < 6:
-                level_idx = self.level
-            else:
-                level_idx = random.choice(range(1, 6))
-            if self.type == 'all':
-                corrupt_func = random.choice(corruption_function)
-            else:
-                func_name_list = [f.__name__ for f in corruption_function]
-                corrupt_idx = func_name_list.index(self.type)
-                corrupt_func = corruption_function[corrupt_idx]
-            c_img = corrupt_func(img.copy(), severity=level_idx)
-            img = Image.fromarray(np.uint8(c_img))
-            return img
-    ```
-
+    def __call__(self, img):
+        if self.level > 0 and self.level < 6:
+            level_idx = self.level
+        else:
+            level_idx = random.choice(range(1, 6))
+        if self.type == 'all':
+            corrupt_func = random.choice(corruption_function)
+        else:
+            func_name_list = [f.__name__ for f in corruption_function]
+            corrupt_idx = func_name_list.index(self.type)
+            corrupt_func = corruption_function[corrupt_idx]
+        c_img = corrupt_func(img.copy(), severity=level_idx)
+        img = Image.fromarray(np.uint8(c_img))
+        return img
+```
 
 Evaluating corruption robustness can be realized on-the-fly by modifing the transform function uesed in test dataloader. (See details in ./datasets/make_dataloader.py, Line 236)
 
