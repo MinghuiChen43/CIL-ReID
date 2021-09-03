@@ -7,11 +7,14 @@
 
 The main code of corruption transform. (See contextual code in ./datasets/make_dataloader.py, line 61)
 
+    ```python
     from imagecorruptions.corruptions import *
+    
     corruption_function = [gaussian_noise, shot_noise, impulse_noise, defocus_blur,
         glass_blur, motion_blur, zoom_blur, snow, frost, fog, brightness, contrast,
         elastic_transform, pixelate, jpeg_compression, speckle_noise,
         gaussian_blur, spatter, saturate, rain]
+        
     class corruption_transform(object):
         def __init__(self, level=0, type='all'):
             self.level = level
@@ -31,17 +34,22 @@ The main code of corruption transform. (See contextual code in ./datasets/make_d
             c_img = corrupt_func(img.copy(), severity=level_idx)
             img = Image.fromarray(np.uint8(c_img))
             return img
+    ```
+
 
 Evaluating corruption robustness can be realized on-the-fly by modifing the transform function uesed in test dataloader. (See details in ./datasets/make_dataloader.py, Line 236)
 
+        ```python
         val_with_corruption_transforms = T.Compose([
             corruption_transform(0),
             T.Resize(cfg.INPUT.SIZE_TEST),
             T.ToTensor(),])
+        ```
 
 #### Rain details
 We introduce a rain corruption type, which is a common type of weather condition, but it is missed by the original corruption benchmark. (See details in ./datasets/make_dataloader.py, Line 29)
 
+    ```python
     def rain(image, severity=1):
         if severity == 1:
             type = 'drizzle'
@@ -62,6 +70,7 @@ We introduce a rain corruption type, which is a common type of weather condition
             new_size = (int(width * scale_factor), 65)
             image = image.resize(new_size)
         return rain(image=np.array(image))['image']
+    ```
 
 
 
