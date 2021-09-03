@@ -38,38 +38,38 @@ class corruption_transform(object):
 
 Evaluating corruption robustness can be realized on-the-fly by modifing the transform function uesed in test dataloader. (See details in ./datasets/make_dataloader.py, Line 236)
 
-        ```python
-        val_with_corruption_transforms = T.Compose([
-            corruption_transform(0),
-            T.Resize(cfg.INPUT.SIZE_TEST),
-            T.ToTensor(),])
-        ```
+```python
+val_with_corruption_transforms = T.Compose([
+corruption_transform(0),
+T.Resize(cfg.INPUT.SIZE_TEST),
+T.ToTensor(),])
+```
 
 #### Rain details
 We introduce a rain corruption type, which is a common type of weather condition, but it is missed by the original corruption benchmark. (See details in ./datasets/make_dataloader.py, Line 29)
 
-    ```python
-    def rain(image, severity=1):
-        if severity == 1:
-            type = 'drizzle'
-        elif severity == 2 or severity == 3:
-            type = 'heavy'
-        elif severity == 4 or severity == 5:
-            type = 'torrential'
-        blur_value = 2 + severity
-        bright_value = -(0.05 + 0.05 * severity)
-        rain = abm.Compose([
-            abm.augmentations.transforms.RandomRain(rain_type=type, 
-            blur_value=blur_value, brightness_coefficient=1, always_apply=True),
-            abm.augmentations.transforms.RandomBrightness(limit=[bright_value, 
-            bright_value], always_apply=True)])
-        width, height = image.size
-        if height <= 60:
-            scale_factor = 65.0 / height
-            new_size = (int(width * scale_factor), 65)
-            image = image.resize(new_size)
-        return rain(image=np.array(image))['image']
-    ```
+```python
+def rain(image, severity=1):
+    if severity == 1:
+        type = 'drizzle'
+    elif severity == 2 or severity == 3:
+        type = 'heavy'
+    elif severity == 4 or severity == 5:
+        type = 'torrential'
+    blur_value = 2 + severity
+    bright_value = -(0.05 + 0.05 * severity)
+    rain = abm.Compose([
+        abm.augmentations.transforms.RandomRain(rain_type=type, 
+        blur_value=blur_value, brightness_coefficient=1, always_apply=True),
+        abm.augmentations.transforms.RandomBrightness(limit=[bright_value, 
+        bright_value], always_apply=True)])
+    width, height = image.size
+    if height <= 60:
+        scale_factor = 65.0 / height
+        new_size = (int(width * scale_factor), 65)
+        image = image.resize(new_size)
+    return rain(image=np.array(image))['image']
+```
 
 
 
