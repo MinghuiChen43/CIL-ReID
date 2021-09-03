@@ -40,9 +40,9 @@ Evaluating corruption robustness can be realized on-the-fly by modifing the tran
 
 ```python
 val_with_corruption_transforms = T.Compose([
-corruption_transform(0),
-T.Resize(cfg.INPUT.SIZE_TEST),
-T.ToTensor(),])
+    corruption_transform(0),
+    T.Resize(cfg.INPUT.SIZE_TEST),
+    T.ToTensor(),])
 ```
 
 #### Rain details
