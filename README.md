@@ -223,3 +223,5 @@ def rain(image, severity=1):
         <td> 0.10 </td> <td> <b>6.60</b> </td> <td> 26.20 </td>
     </tr>
 </table>
+
+
