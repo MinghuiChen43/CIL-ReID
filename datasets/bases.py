@@ -9,7 +9,6 @@ from .augmentations.augmix import augmix
 import torchvision.transforms as T
 import numpy as np
 from timm.data.random_erasing import RandomErasing
-from .augmentations.pyramid_mix import pyramid_aug, jigsaw_aug, anti_jigsaw_aug, pyramid_augmix
 import math
 
 from PIL import Image
@@ -349,21 +348,6 @@ class ImageDataset(Dataset):
         img_path, pid, camid, trackid = self.dataset[index]
         img = read_image(img_path)
 
-        if self.cfg is not None and self.cfg.INPUT.SEMI_CORRUPTED:
-            hash_str = (img_path + str(self.cfg.INPUT.CORRUPTED_SEED))
-            hash_code = int(
-                hashlib.sha256(hash_str.encode('utf-8')).hexdigest(),
-                16) % 10**8
-            if hash_code % 10 < 10 * self.cfg.INPUT.CORRUPTED_RATIO:
-                hash_code = hash_code // 10
-                c_level = hash_code % 5 + 1
-                hash_code = hash_code // 10
-                c_type_idx = hash_code % 20
-                corrupted = corruption_transform(
-                    level=c_level,
-                    type=corruption_function[c_type_idx].__name__)
-                img = corrupted(img)
-
         if self.cfg is not None and self.cfg.INPUT.SELF_ID:
             random_erasing = mixing_erasing(
                 probability=self.cfg.INPUT.RE_PROB,
@@ -386,41 +370,7 @@ class ImageDataset(Dataset):
                 T.ToTensor(),
             ])
 
-            if self.cfg.INPUT.RESIZE_MIX:
-                ori_img = img.copy()
-
             img = pre_transform(img)
-
-            # pre resize mix
-            if self.cfg.INPUT.RESIZE_MIX:
-                for attempt in range(100):
-                    if random.uniform(0, 1) >= self.cfg.INPUT.RESIZE_MIX_PROB:
-                        break
-
-                    sl = 0.02
-                    sh = 0.4
-                    r1 = 0.3
-                    area = img.size()[1] * img.size()[2]
-                    target_area = random.uniform(sl, sh) * area
-                    aspect_ratio = random.uniform(r1, 1 / r1)
-
-                    h = int(round(math.sqrt(target_area * aspect_ratio)))
-                    w = int(round(math.sqrt(target_area / aspect_ratio)))
-
-                    resize_img = ori_img.resize((w, h), Image.ANTIALIAS)
-                    resize_img = post_transform(resize_img)
-
-                    if w < img.size()[2] and h < img.size()[1]:
-                        x1 = random.randint(0, img.size()[1] - h)
-                        y1 = random.randint(0, img.size()[2] - w)
-                        m = random.uniform(0, 0.5)
-                        # m = np.float32(
-                        #     np.random.beta(self.mixing_coeff,
-                        #                    self.mixing_coeff))
-                        img[:, x1:x1 + h,
-                            y1:y1 + w] = (1 - m) * img[:, x1:x1 + h, y1:y1 +
-                                                       w] + m * resize_img
-                        break
 
             img = T.ToPILImage()(img).convert('RGB')
             if self.cfg.INPUT.AUGMIX:
@@ -429,11 +379,6 @@ class ImageDataset(Dataset):
                 img2 = augmix(img)
                 img1 = np.clip(img1 * 255., 0, 255).astype(np.uint8)
                 img2 = np.clip(img2 * 255., 0, 255).astype(np.uint8)
-            elif self.cfg.INPUT.CORRUPTION_AUG:
-                corruption_aug = corruption_transform(
-                    level=self.cfg.INPUT.CORRUPTION_AUG_LEVEL)
-                img1 = corruption_aug(img)
-                img2 = corruption_aug(img)
 
             img = post_transform(img)
             img1 = post_transform(img1)

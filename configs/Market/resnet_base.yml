@@ -1,6 +1,6 @@
 MODEL:
   PRETRAIN_CHOICE: 'imagenet'
-  PRETRAIN_PATH: '/home/chenminghui/.cache/torch/hub/checkpoints/resnet50-19c8e357.pth'
+  PRETRAIN_PATH: '/home/wangzhiqiang/.cache/torch/hub/checkpoints/resnet50-19c8e357.pth'
   METRIC_LOSS_TYPE: 'triplet'
   NAME: 'resnet50'
   NO_MARGIN: True
