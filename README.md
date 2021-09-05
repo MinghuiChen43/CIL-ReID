@@ -1,5 +1,5 @@
 # Corruption Invariant Learning for Re-identification.
-
+(Note: codebase from [TransReID](https://github.com/heshuting555/TransReID))
 
 ## Evaluating Corruption Robustness On-the-fly
 
@@ -79,6 +79,8 @@ def rain(image, severity=1):
 <td> <img src='./imgs/market.png' width=100%> </td>
 <td> <img src='./imgs/market_c.png' width=100%> </td>
 </tr></table>
+
+
 
 
 ## Leaderboard
@@ -225,3 +227,163 @@ def rain(image, severity=1):
 </table>
 
 
+#### DukeMTMC-C 
+**(Note: ranked by mAP on corrupted test set)**
+<table>
+    <tr>
+        <th rowspan="2"> Method</th>
+        <th rowspan="2"> Reference </th>
+        <th colspan="3">Clean Eval.</th>
+        <th colspan="3">Corruption Eval.</th>
+    </tr>
+    <tr>
+        <th>mINP</th> <th>mAP</th> <th>Rank-1</th>
+        <th>mINP</th> <th>mAP</th> <th>Rank-1</th>
+    </tr>
+    <tr>
+        <td> CaceNet </td> 
+        <td> <a href="https://arxiv.org/abs/2009.05250"> Fufu Yu et al. (2020) </a> </td>
+        <td> 48.18 </td> <td> 80.85 </td> <td> 89.86 </td>
+        <td> 1.10 </td>  <td> <b>24.95</b> </td> <td> 50.70 </td>
+    </tr>
+    <tr>
+        <td> Pyramid </td>
+        <td> <a href="https://arxiv.org/abs/1810.12193"> Feng Zheng et al. (2018) </a> </td>
+        <td> 38.86 </td> <td> 78.05 </td> <td> 89.32 </td>
+        <td> 0.59 </td>  <td> <b>19.25</b> </td> <td> 44.87 </td>
+    </tr>
+    <tr>
+        <td> RRID </td> 
+        <td> <a href="https://arxiv.org/abs/1911.09318"> Hyunjong Park et al. (2019) </a> </td>
+        <td> 38.52 </td> <td> 77.25 </td> <td> 88.82 </td>
+        <td> 0.78 </td> <td> <b>18.74</b> </td> <td> 42.64 </td>
+    </tr>
+    <tr>
+        <td> OS-Net </td> 
+        <td> <a href="https://arxiv.org/abs/1905.00953"> Kaiyang Zhou et al. (2019) </a> </td>
+        <td> 28.26 </td> <td> 70.16 </td> <td> 87.03 </td>
+        <td> 0.50 </td> <td> <b>17.43</b> </td> <td> 43.29 </td>
+    </tr>
+    <tr>
+        <td> PLR-OS </td> 
+        <td> <a href="https://arxiv.org/abs/2001.07442"> Ben Xie et al. (2020) </a> </td>
+        <td> 46.52 </td> <td> 80.98 </td> <td> 90.66 </td>
+        <td> 0.49 </td> <td> <b>16.00</b> </td> <td> 38.62 </td>
+    </tr>
+    <tr>
+        <td> MHN </td> 
+        <td> <a href="https://arxiv.org/abs/1908.05819"> Binghui Chen et al. (2019) </a> </td>
+        <td> 40.68 </td> <td> 77.91 </td> <td> 89.23 </td>
+        <td> 0.45 </td> <td> <b>14.01</b> </td> <td> 38.04 </td>
+    </tr>
+    <tr>
+        <td> Aligned++ </td> 
+        <td> <a href="https://www.sciencedirect.com/science/article/abs/pii/S0031320319302031"> Hao Luo et al. (2019) </a> </td>
+        <td> 29.66 </td> <td> 69.75 </td> <td> 82.14 </td>
+        <td> 0.35 </td> <td> <b>13.51</b> </td> <td> 34.41 </td>
+    </tr>
+    <tr>
+        <td> ABD-Net </td> 
+        <td> <a href="https://arxiv.org/abs/1908.01114"> Tianlong Chen et al. (2019) </a> </td>
+        <td> 40.38 </td> <td> 77.69 </td> <td> 88.33 </td>
+        <td> 0.23 </td> <td> <b>11.53</b> </td> <td> 33.41 </td>
+    </tr>
+    <tr>
+        <td> MGN </td> 
+        <td> <a href="https://arxiv.org/abs/1804.01438"> Guanshuo Wang et al.(2018) </a> </td>
+        <td> 40.81 </td> <td> 77.50 </td> <td> 87.66 </td>
+        <td> 0.24 </td> <td> <b>11.21</b> </td> <td> 31.01 </td>
+    </tr>
+</table>
+
+
+#### CUHK03-C (detected)
+**(Note: ranked by mAP on corrupted test set)**
+<table>
+    <tr>
+        <th rowspan="2"> Method</th>
+        <th rowspan="2"> Reference </th>
+        <th colspan="3">Clean Eval.</th>
+        <th colspan="3">Corruption Eval.</th>
+    </tr>
+    <tr>
+        <th>mINP</th> <th>mAP</th> <th>Rank-1</th>
+        <th>mINP</th> <th>mAP</th> <th>Rank-1</th>
+    </tr>
+    <tr>
+        <td> CaceNet </td> 
+        <td> <a href="https://arxiv.org/abs/2009.05250"> Fufu Yu et al. (2020) </a> </td>
+        <td> 65.22 </td> <td> 75.13 </td> <td> 77.64 </td>
+        <td> 2.09 </td>  <td> <b>10.62</b> </td> <td> 17.04 </td>
+    </tr>
+    <tr>
+        <td> Pyramid </td>
+        <td> <a href="https://arxiv.org/abs/1810.12193"> Feng Zheng et al. (2018) </a> </td>
+        <td> 61.41 </td> <td> 73.14 </td> <td> 79.54 </td>
+        <td> 1.10 </td>  <td> <b>8.03</b> </td> <td> 10.42 </td>
+    </tr>
+    <tr>
+        <td> RRID </td> 
+        <td> <a href="https://arxiv.org/abs/1911.09318"> Hyunjong Park et al. (2019) </a> </td>
+        <td> 55.81 </td> <td> 67.63 </td> <td> 74.99 </td>
+        <td> 1.00 </td> <td> <b>7.30</b> </td> <td> 9.66 </td>
+    </tr>
+    <tr>
+        <td> PLR-OS </td> 
+        <td> <a href="https://arxiv.org/abs/2001.07442"> Ben Xie et al. (2020) </a> </td>
+        <td> 62.72 </td> <td> 74.67 </td> <td> 78.14 </td>
+        <td> 0.89 </td> <td> <b>6.49</b> </td> <td> 10.99 </td>
+    </tr>
+    <tr>
+        <td> Aligned++ </td> 
+        <td> <a href="https://www.sciencedirect.com/science/article/abs/pii/S0031320319302031"> Hao Luo et al. (2019) </a> </td>
+        <td> 47.32 </td> <td> 59.76 </td> <td> 62.07 </td>
+        <td> 0.56 </td> <td> <b>4.87</b> </td> <td> 7.99 </td>
+    </tr>
+    <tr>
+        <td> MGN </td> 
+        <td> <a href="https://arxiv.org/abs/1804.01438"> Guanshuo Wang et al.(2018) </a> </td>
+        <td> 51.18 </td> <td> 62.73 </td> <td> 69.14 </td>
+        <td> 0.46 </td> <td> <b>4.20</b> </td> <td> 5.44 </td>
+    </tr>
+    <tr>
+        <td> MHN </td> 
+        <td> <a href="https://arxiv.org/abs/1908.05819"> Binghui Chen et al. (2019) </a> </td>
+        <td> 56.52 </td> <td> 66.77 </td> <td> 72.21 </td>
+        <td> 0.46 </td> <td> <b>3.97</b> </td> <td> 8.27 </td>
+    </tr>
+</table>
+
+
+#### MSMT17-C
+**(Note: ranked by mAP on corrupted test set)**
+<table>
+    <tr>
+        <th rowspan="2"> Method</th>
+        <th rowspan="2"> Reference </th>
+        <th colspan="3">Clean Eval.</th>
+        <th colspan="3">Corruption Eval.</th>
+    </tr>
+    <tr>
+        <th>mINP</th> <th>mAP</th> <th>Rank-1</th>
+        <th>mINP</th> <th>mAP</th> <th>Rank-1</th>
+    </tr>
+    <tr>
+        <td> OS-Net </td> 
+        <td> <a href="https://arxiv.org/abs/1905.00953"> Kaiyang Zhou et al. (2019) </a> </td>
+        <td> 4.05 </td> <td> 40.05 </td> <td> 71.86 </td>
+        <td> 0.08 </td> <td> <b>7.86</b> </td> <td> 28.51 </td>
+    </tr>
+    <tr>
+        <td> AGW </td> 
+        <td> <a href="https://arxiv.org/abs/2001.04193v2"> Mang Ye et al. (2020) </a> </td>
+        <td> 12.38 </td> <td> 51.84 </td> <td> 75.21 </td>
+        <td> 0.08 </td> <td> <b>6.53</b> </td> <td> 22.77 </td>
+    </tr>
+    <tr>
+        <td> BoT </td> 
+        <td> <a href="https://arxiv.org/abs/1906.08332"> Hao Luo et al. (2019) </a> </td>
+        <td> 9.91 </td> <td> 48.34 </td> <td> 73.53 </td>
+        <td> 0.07 </td> <td> <b>5.28</b> </td> <td> 20.20 </td>
+    </tr>
+</table>
