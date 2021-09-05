@@ -81,7 +81,7 @@ def rain(image, severity=1):
 </tr></table>
 
 
-## Learderboard
+## Leaderboard
 
 #### Market1501-C 
 **(Note: ranked by mAP on corrupted test set)**
