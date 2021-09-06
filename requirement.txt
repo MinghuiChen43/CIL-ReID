@@ -1,0 +1,9 @@
+python=3.7.0
+pytorch=1.6.0
+torchvision=0.7.0
+timm=0.4.9
+albumentations=0.5.2
+imagecorruptions=1.1.2
+h5py=2.10.0
+cython=0.29.24
+yacs=0.1.6
