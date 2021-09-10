@@ -160,6 +160,7 @@ def rain(image, severity=1):
 </table>
 
 * **Cross-modality datasets**
+
 **Note:** For RegDB dataset, Mode A and Mode B represent visible-to-thermal and thermal-to-visible experimental settings, respectively. Note that we only corrupt RGB (visible) images in the corruption evaluation.
 
 <table>
