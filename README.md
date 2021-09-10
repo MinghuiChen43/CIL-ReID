@@ -70,7 +70,148 @@ def rain(image, severity=1):
         image = image.resize(new_size)
     return rain(image=np.array(image))['image']
 ```
+## Baselines
+* **Single-modality datasets**
+<table>
+    <tr>
+        <th rowspan="2"> Dataset</th>
+        <th rowspan="2"> Method</th>
+        <th colspan="3">Clean Eval.</th>
+        <th colspan="3">Corruption Eval.</th>
+    </tr>
+    <tr>
+        <th>mINP</th> <th>mAP</th> <th>Rank-1</th>
+        <th>mINP</th> <th>mAP</th> <th>Rank-1</th>
+    </tr>
+    <tr>
+        <td rowspan="4"> Market-1501</td>
+        <td> BoT </td> 
+        <td> 59.30 </td> <td> 85.06 </td> <td> 93.38 </td>
+        <td> 0.20 </td>  <td> 8.42 </td> <td> 27.05 </td>
+    </tr>
+    <tr>
+        <td> AGW </td>
+        <td> <b>64.03</b> </td> <td> 86.51 </td> <td> 94.00 </td>
+        <td> 0.35 </td>  <td> 12.13 </td> <td> 31.90 </td>
+    </tr>
+    <tr>
+        <td> SBS </td> 
+        <td> 60.03 </td> <td> <b>88.33</b> </td> <td> <b>95.90</b> </td>
+        <td> 0.29 </td>  <td> 11.54 </td> <td> 34.13 </td>
+    </tr>
+    <tr>
+        <td> CIL (ours) </td> 
+        <td> 57.90 </td> <td> 84.04 </td> <td> 93.38 </td>
+        <td> <b>1.76</b> </td> <td> <b>28.03</b> </td> <td> <b>55.57</b> </td>
+    </tr>
+    <tr>
+        <td rowspan="4"> DukeMTMC</td>
+        <td> BoT </td> 
+        <td> 38.09 </td> <td> 74.46 </td> <td> 85.01 </td>
+        <td> 0.13 </td>  <td> 9.41 </td> <td> 28.43 </td>
+    </tr>
+    <tr>
+        <td> AGW </td>
+        <td> <b>42.22</b> </td> <td> 76.76 </td> <td> 86.62 </td>
+        <td> 0.31 </td>  <td> 12.42 </td> <td> 32.57 </td>
+    </tr>
+    <tr>
+        <td> SBS </td> 
+        <td> 39.98 </td> <td> <b>78.77</b> </td> <td> <b>90.39</b> </td>
+        <td> 0.22 </td>  <td> 13.77 </td> <td> 37.31 </td>
+    </tr>
+    <tr>
+        <td> CIL (ours) </td> 
+        <td> 38.60 </td> <td> 75.15 </td> <td> 87.52 </td>
+        <td> <b>2.28</b> </td> <td> <b>31.43</b> </td> <td> <b>57.76</b> </td>
+    </tr>
+    <tr>
+        <td rowspan="4"> MSMT17</td>
+        <td> BoT </td> 
+        <td> 9.91 </td> <td> 48.34 </td> <td> 73.53 </td>
+        <td> 0.07 </td>  <td> 5.28 </td> <td> 20.20 </td>
+    </tr>
+    <tr>
+        <td> AGW </td>
+        <td> 12.38 </td> <td> 51.84 </td> <td> 75.21 </td>
+        <td> 0.08 </td>  <td> 6.53 </td> <td> 22.77 </td>
+    </tr>
+    <tr>
+        <td> SBS </td> 
+        <td> 10.26 </td> <td> <b>56.62</b> </td> <td> <b>82.02</b> </td>
+        <td> 0.05 </td>  <td> 7.89 </td> <td> 28.77 </td>
+    </tr>
+    <tr>
+        <td> CIL (ours) </td> 
+        <td> <b>12.45</b> </td> <td> 52.40 </td> <td> 76.10 </td>
+        <td> <b>0.32</b> </td> <td> <b>15.33</b> </td> <td> <b>39.79</b> </td>
+    </tr>
+    <tr>
+        <td rowspan="2"> CUHK03</td>
+        <td> AGW </td>
+        <td> 49.97 </td> <td> 62.25 </td> <td> 64.64 </td>
+        <td> 0.46 </td>  <td> 3.45 </td> <td> 5.90 </td>
+    </tr>
+    <tr>
+        <td> CIL (ours) </td> 
+        <td> <b>53.87</b> </td> <td> <b>65.16</b> </td> <td> <b>67.29</b> </td>
+        <td> <b>4.25</b> </td> <td> <b>16.33</b> </td> <td> <b>22.96</b> </td>
+    </tr>
+</table>
 
+* **Cross-modality datasets**
+**Note:** For RegDB dataset, Mode A and Mode B represent visible-to-thermal and thermal-to-visible experimental settings, respectively. Note that we only corrupt RGB (visible) images in the corruption evaluation.
+
+<table>
+    <tr>
+        <th rowspan="3"> Dataset</th>
+        <th rowspan="3"> Method</th>
+        <th colspan="6">Mode A</th>
+        <th colspan="6">Mode B</th>
+    </tr>
+    <tr>
+        <th colspan="3">Clean Eval.</th>
+        <th colspan="3">Corruption Eval.</th>
+        <th colspan="3">Clean Eval.</th>
+        <th colspan="3">Corruption Eval.</th>
+    </tr>
+    <tr>
+        <th>mINP</th> <th>mAP</th> <th>R-1</th>
+        <th>mINP</th> <th>mAP</th> <th>R-1</th>
+        <th>mINP</th> <th>mAP</th> <th>R-1</th>
+        <th>mINP</th> <th>mAP</th> <th>R-1</th>
+    </tr>
+    <tr>
+        <td rowspan="2"> SYSU-MM01</td>
+        <td> AGW </td>
+        <td> 36.17 </td> <td> <b>47.65</b> </td> <td> <b>47.50</b> </td>
+        <td> 14.73 </td>  <td> 29.99 </td> <td> 34.42 </td>
+        <td> <b>59.74</b> </td> <td> <b>62.97</b> </td> <td> <b>54.17</b> </td>
+        <td> 35.39 </td>  <td> 40.98 </td> <td> 33.80 </td>
+    </tr>
+    <tr>
+        <td> CIL (ours) </td> 
+        <td> <b>38.15</b> </td> <td> 47.64 </td> <td> 45.51 </td>
+        <td> <b>22.48</b> </td>  <td> <b>35.92</b> </td> <td> <b>36.95</b> </td>
+        <td> 57.41 </td> <td> 60.45 </td> <td> 50.98 </td>
+        <td> <b>43.11</b> </td>  <td> <b>48.65</b> </td> <td> <b>40.73</b> </td>
+    </tr>
+    <tr>
+        <td rowspan="2"> RegDB</td>
+        <td> AGW </td>
+        <td> 54.10 </td> <td> 68.82 </td> <td> <b>75.78</b> </td>
+        <td> 32.88 </td>  <td> 43.09 </td> <td> 45.44 </td>
+        <td> 52.40 </td> <td> 68.15 </td> <td> <b>75.29</b> </td>
+        <td> 6.00 </td>  <td> 41.37 </td> <td> <b>67.54</b> </td>
+    </tr>
+    <tr>
+        <td> CIL (ours) </td> 
+        <td> <b>55.68</b> </td> <td> <b>69.75</b> </td> <td> 74.96 </td>
+        <td> <b>38.66</b> </td>  <td> <b>49.76</b> </td> <td> <b>52.25</b> </td>
+        <td> <b>55.50</b> </td> <td> <b>69.21</b> </td> <td> 74.95 </td>
+        <td> <b>11.94</b> </td>  <td> <b>47.90</b> </td> <td> 67.17 </td>
+    </tr>
+</table>
 
 
 ## Recent Advance in Person Re-ID
@@ -79,9 +220,6 @@ def rain(image, severity=1):
 <td> <img src='./imgs/market.png' width=100%> </td>
 <td> <img src='./imgs/market_c.png' width=100%> </td>
 </tr></table>
-
-
-
 
 ## Leaderboard
 
@@ -296,7 +434,6 @@ def rain(image, severity=1):
     </tr>
 </table>
 
-
 #### CUHK03-C (detected)
 **(Note: ranked by mAP on corrupted test set)**
 <table>
@@ -355,7 +492,7 @@ def rain(image, severity=1):
 </table>
 
 
-#### MSMT17-C
+#### MSMT17-C (Version 2)
 **(Note: ranked by mAP on corrupted test set)**
 <table>
     <tr>
