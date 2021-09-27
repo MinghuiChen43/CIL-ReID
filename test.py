@@ -45,7 +45,6 @@ if __name__ == "__main__":
         cfg)
 
     # market: 751
-    # duke: 702
     # cuhk: 767
     # msmt: 1041
     num_classes = 751
