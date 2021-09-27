@@ -105,27 +105,6 @@ def rain(image, severity=1):
         <td> <b>1.76</b> </td> <td> <b>28.03</b> </td> <td> <b>55.57</b> </td>
     </tr>
     <tr>
-        <td rowspan="4"> DukeMTMC</td>
-        <td> BoT </td> 
-        <td> 38.09 </td> <td> 74.46 </td> <td> 85.01 </td>
-        <td> 0.13 </td>  <td> 9.41 </td> <td> 28.43 </td>
-    </tr>
-    <tr>
-        <td> AGW </td>
-        <td> <b>42.22</b> </td> <td> 76.76 </td> <td> 86.62 </td>
-        <td> 0.31 </td>  <td> 12.42 </td> <td> 32.57 </td>
-    </tr>
-    <tr>
-        <td> SBS </td> 
-        <td> 39.98 </td> <td> <b>78.77</b> </td> <td> <b>90.39</b> </td>
-        <td> 0.22 </td>  <td> 13.77 </td> <td> 37.31 </td>
-    </tr>
-    <tr>
-        <td> CIL (ours) </td> 
-        <td> 38.60 </td> <td> 75.15 </td> <td> 87.52 </td>
-        <td> <b>2.28</b> </td> <td> <b>31.43</b> </td> <td> <b>57.76</b> </td>
-    </tr>
-    <tr>
         <td rowspan="4"> MSMT17</td>
         <td> BoT </td> 
         <td> 9.91 </td> <td> 48.34 </td> <td> 73.53 </td>
