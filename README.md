@@ -27,12 +27,14 @@ The benchmark will be maintained by the authors. We will get constant lectures a
 Download the datasets, [Market-1501](https://openaccess.thecvf.com/content_iccv_2015/html/Zheng_Scalable_Person_Re-Identification_ICCV_2015_paper.html), [CUHK03](https://openaccess.thecvf.com/content_cvpr_2014/html/Li_DeepReID_Deep_Filter_2014_CVPR_paper.html), [MSMT17](https://arxiv.org/abs/1711.08565). Set the root path of the dataset in `congigs/Market/resnet_base.yml`, `DATASETS: ROOT_DIR: ('root')`, or set it in `scripts/train_market.sh`, `DATASETS.ROOT_DIR "('root')"`.
 
 **3. Train**
+
 Train a CIL model on Market-1501,
 ```
 sh ./scripts/train_market.sh
 ```
 
 **4. Test**
+
 Test the CIL model on Market-1501,
 ```
 sh ./scripts/eval_market.sh
