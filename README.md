@@ -12,17 +12,20 @@
 * cython=0.29.24
 * yacs=0.1.6
 
-**2. Train**
-Train a CIL model on Market-1501,
-'''
-sh ./scripts/train_market.sh
-'''
+**2. Prepare dataset**
+Download the datasets, [Market-1501](https://openaccess.thecvf.com/content_iccv_2015/html/Zheng_Scalable_Person_Re-Identification_ICCV_2015_paper.html), [CUHK03](https://openaccess.thecvf.com/content_cvpr_2014/html/Li_DeepReID_Deep_Filter_2014_CVPR_paper.html), [MSMT17](https://arxiv.org/abs/1711.08565). Set the root path of the dataset in congigs/Market/resnet_base.yml, DATASETS: ROOT_DIR: ('root'), or set it in scripts/train_market.sh, DATASETS.ROOT_DIR "('root')".
 
-**3. Test**
+**3. Train**
+Train a CIL model on Market-1501,
+```
+sh ./scripts/train_market.sh
+```
+
+**4. Test**
 Test the CIL model on Market-1501,
-'''
+```
 sh ./scripts/eval_market.sh
-'''
+```
 
 ## Evaluating Corruption Robustness On-the-fly
 
@@ -93,6 +96,8 @@ def rain(image, severity=1):
         image = image.resize(new_size)
     return rain(image=np.array(image))['image']
 ```
+
+
 ## Baselines
 * **Single-modality datasets**
 <table>
