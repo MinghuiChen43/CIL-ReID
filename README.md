@@ -1,5 +1,28 @@
 # Corruption Invariant Learning for Re-identification.
-(Note: codebase from [TransReID](https://github.com/heshuting555/TransReID))
+
+## Quick Start
+**1. Install dependencies**
+* python=3.7.0
+* pytorch=1.6.0
+* torchvision=0.7.0
+* timm=0.4.9
+* albumentations=0.5.2
+* imagecorruptions=1.1.2
+* h5py=2.10.0
+* cython=0.29.24
+* yacs=0.1.6
+
+**2. Train**
+Train a CIL model on Market-1501,
+'''
+sh ./scripts/train_market.sh
+'''
+
+**3. Test**
+Test the CIL model on Market-1501,
+'''
+sh ./scripts/eval_market.sh
+'''
 
 ## Evaluating Corruption Robustness On-the-fly
 
@@ -86,23 +109,23 @@ def rain(image, severity=1):
     <tr>
         <td rowspan="4"> Market-1501</td>
         <td> BoT </td> 
-        <td> 59.30 </td> <td> 85.06 </td> <td> 93.38 </td>
-        <td> 0.20 </td>  <td> 8.42 </td> <td> 27.05 </td>
+        <td> 59.30</td> <td> 85.06 </td> <td> 93.38 </td>
+        <td> 0.20 </td>  <td> 8.42 </td> <td> 27.05</td>
     </tr>
     <tr>
         <td> AGW </td>
         <td> <b>64.03</b> </td> <td> 86.51 </td> <td> 94.00 </td>
-        <td> 0.35 </td>  <td> 12.13 </td> <td> 31.90 </td>
+        <td> 0.35</td>  <td> 12.13</td> <td> 31.90 </td>
     </tr>
     <tr>
         <td> SBS </td> 
         <td> 60.03 </td> <td> <b>88.33</b> </td> <td> <b>95.90</b> </td>
-        <td> 0.29 </td>  <td> 11.54 </td> <td> 34.13 </td>
+        <td> 0.29 </td>  <td> 11.54</td> <td> 34.13 </td>
     </tr>
     <tr>
         <td> CIL (ours) </td> 
         <td> 57.90 </td> <td> 84.04 </td> <td> 93.38 </td>
-        <td> <b>1.76</b> </td> <td> <b>28.03</b> </td> <td> <b>55.57</b> </td>
+        <td> <b>1.76 (0.13)</b> </td> <td> <b>28.03 (0.45)</b> </td> <td> <b>55.57 (0.63)</b> </td>
     </tr>
     <tr>
         <td rowspan="4"> MSMT17</td>
@@ -113,34 +136,34 @@ def rain(image, severity=1):
     <tr>
         <td> AGW </td>
         <td> 12.38 </td> <td> 51.84 </td> <td> 75.21 </td>
-        <td> 0.08 </td>  <td> 6.53 </td> <td> 22.77 </td>
+        <td> 0.08 </td>  <td> 6.53</td> <td> 22.77</td>
     </tr>
     <tr>
         <td> SBS </td> 
         <td> 10.26 </td> <td> <b>56.62</b> </td> <td> <b>82.02</b> </td>
-        <td> 0.05 </td>  <td> 7.89 </td> <td> 28.77 </td>
+        <td> 0.05</td>  <td> 7.89</td> <td> 28.77</td>
     </tr>
     <tr>
         <td> CIL (ours) </td> 
         <td> <b>12.45</b> </td> <td> 52.40 </td> <td> 76.10 </td>
-        <td> <b>0.32</b> </td> <td> <b>15.33</b> </td> <td> <b>39.79</b> </td>
+        <td> <b>0.32 (0.03)</b> </td> <td> <b>15.33 (0.20)</b> </td> <td> <b>39.79 (0.45)</b> </td>
     </tr>
     <tr>
         <td rowspan="2"> CUHK03</td>
         <td> AGW </td>
         <td> 49.97 </td> <td> 62.25 </td> <td> 64.64 </td>
-        <td> 0.46 </td>  <td> 3.45 </td> <td> 5.90 </td>
+        <td> 0.46 </td>  <td> 3.45</td> <td> 5.90 </td>
     </tr>
     <tr>
         <td> CIL (ours) </td> 
         <td> <b>53.87</b> </td> <td> <b>65.16</b> </td> <td> <b>67.29</b> </td>
-        <td> <b>4.25</b> </td> <td> <b>16.33</b> </td> <td> <b>22.96</b> </td>
+        <td> <b>4.25 (0.39)</b> </td> <td> <b>16.33 (0.76)</b> </td> <td> <b>22.96 (1.04)</b> </td>
     </tr>
 </table>
 
 * **Cross-modality datasets**
 
-**Note:** For RegDB dataset, Mode A and Mode B represent visible-to-thermal and thermal-to-visible experimental settings, respectively. Note that we only corrupt RGB (visible) images in the corruption evaluation.
+**Note:** For RegDB dataset, Mode A and Mode B represent visible-to-thermal and thermal-to-visible experimental settings, respectively. And for SYSU-MM01 dataset, Mode A and Mode B represent all search and indoor search respectively. Note that we only corrupt RGB (visible) images in the corruption evaluation.
 
 <table>
     <tr>
@@ -172,9 +195,9 @@ def rain(image, severity=1):
     <tr>
         <td> CIL (ours) </td> 
         <td> <b>38.15</b> </td> <td> 47.64 </td> <td> 45.51 </td>
-        <td> <b>22.48</b> </td>  <td> <b>35.92</b> </td> <td> <b>36.95</b> </td>
+        <td> <b>22.48 (1.65)</b> </td>  <td> <b>35.92 (1.22)</b> </td> <td> <b>36.95 (0.67)</b> </td>
         <td> 57.41 </td> <td> 60.45 </td> <td> 50.98 </td>
-        <td> <b>43.11</b> </td>  <td> <b>48.65</b> </td> <td> <b>40.73</b> </td>
+        <td> <b>43.11 (4.19)</b> </td>  <td> <b>48.65 (4.57)</b> </td> <td> <b>40.73 (5.55)</b> </td>
     </tr>
     <tr>
         <td rowspan="2"> RegDB</td>
@@ -187,9 +210,9 @@ def rain(image, severity=1):
     <tr>
         <td> CIL (ours) </td> 
         <td> <b>55.68</b> </td> <td> <b>69.75</b> </td> <td> 74.96 </td>
-        <td> <b>38.66</b> </td>  <td> <b>49.76</b> </td> <td> <b>52.25</b> </td>
+        <td> <b>38.66 (0.01)</b> </td>  <td> <b>49.76 (0.03)</b> </td> <td> <b>52.25 (0.03)</b> </td>
         <td> <b>55.50</b> </td> <td> <b>69.21</b> </td> <td> 74.95 </td>
-        <td> <b>11.94</b> </td>  <td> <b>47.90</b> </td> <td> 67.17 </td>
+        <td> <b>11.94 (0.12)</b> </td>  <td> <b>47.90 (0.01)</b> </td> <td> 67.17 (0.06)</td>
     </tr>
 </table>
 
@@ -435,3 +458,6 @@ def rain(image, severity=1):
         <td> 0.07 </td> <td> <b>5.28</b> </td> <td> 20.20 </td>
     </tr>
 </table>
+
+
+(Note: codebase from [TransReID](https://github.com/heshuting555/TransReID))
