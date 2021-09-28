@@ -11,6 +11,9 @@ The benchmark will be maintained by the authors. We will get constant lectures a
 * checkpoints of the baseline models
 * cross-modality preson Re-ID dataset, CUHK-PEDES
 
+
+(Note: codebase from [TransReID](https://github.com/heshuting555/TransReID))
+
 ## Quick Start
 **1. Install dependencies**
 * python=3.7.0
@@ -477,6 +480,3 @@ def rain(image, severity=1):
         <td> 0.07 </td> <td> <b>5.28</b> </td> <td> 20.20 </td>
     </tr>
 </table>
-
-
-(Note: codebase from [TransReID](https://github.com/heshuting555/TransReID))
