@@ -1,4 +1,14 @@
 # Corruption Invariant Learning for Re-identification.
+ 
+
+
+
+## Maintain Plan
+The benchmark will be maintained by the authors. We will get constant lectures about the new proposed ReID models and evaluate them under the CIL benchmark settings in time. Besides, we gladly take feedback to the CIL benchmark and welcome any contributions in terms of the new ReID models and corresponding evaluations. Please feel free to contact us, wangzq_2021@outlook.com
+
+**TODO:**
+* cross-modality dataset, CUHK-PEDES
+* more detailed statistical evaluations
 
 ## Quick Start
 **1. Install dependencies**
@@ -13,7 +23,7 @@
 * yacs=0.1.6
 
 **2. Prepare dataset**
-Download the datasets, [Market-1501](https://openaccess.thecvf.com/content_iccv_2015/html/Zheng_Scalable_Person_Re-Identification_ICCV_2015_paper.html), [CUHK03](https://openaccess.thecvf.com/content_cvpr_2014/html/Li_DeepReID_Deep_Filter_2014_CVPR_paper.html), [MSMT17](https://arxiv.org/abs/1711.08565). Set the root path of the dataset in congigs/Market/resnet_base.yml, DATASETS: ROOT_DIR: ('root'), or set it in scripts/train_market.sh, DATASETS.ROOT_DIR "('root')".
+Download the datasets, [Market-1501](https://openaccess.thecvf.com/content_iccv_2015/html/Zheng_Scalable_Person_Re-Identification_ICCV_2015_paper.html), [CUHK03](https://openaccess.thecvf.com/content_cvpr_2014/html/Li_DeepReID_Deep_Filter_2014_CVPR_paper.html), [MSMT17](https://arxiv.org/abs/1711.08565). Set the root path of the dataset in `congigs/Market/resnet_base.yml`, `DATASETS: ROOT_DIR: ('root')`, or set it in `scripts/train_market.sh`, `DATASETS.ROOT_DIR "('root')"`.
 
 **3. Train**
 Train a CIL model on Market-1501,
@@ -31,7 +41,7 @@ sh ./scripts/eval_market.sh
 
 #### Corruption Transform
 
-The main code of corruption transform. (See contextual code in ./datasets/make_dataloader.py, line 61)
+The main code of corruption transform. (See contextual code in `./datasets/make_dataloader.py`, line 61)
 
 ```python
 from imagecorruptions.corruptions import *
@@ -72,7 +82,7 @@ val_with_corruption_transforms = T.Compose([
 ```
 
 #### Rain details
-We introduce a rain corruption type, which is a common type of weather condition, but it is missed by the original corruption benchmark. (See details in ./datasets/make_dataloader.py, Line 29)
+We introduce a rain corruption type, which is a common type of weather condition, but it is missed by the original corruption benchmark. (See details in `./datasets/make_dataloader.py`, Line 29)
 
 ```python
 def rain(image, severity=1):
