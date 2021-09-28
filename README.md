@@ -1,14 +1,14 @@
 # Corruption Invariant Learning for Re-identification.
  
-
+ <img src='./imgs/overview_masked.png'>
 
 
 ## Maintain Plan
-The benchmark will be maintained by the authors. We will get constant lectures about the new proposed ReID models and evaluate them under the CIL benchmark settings in time. Besides, we gladly take feedback to the CIL benchmark and welcome any contributions in terms of the new ReID models and corresponding evaluations. Please feel free to contact us, wangzq_2021@outlook.com
+The benchmark will be maintained by the authors. We will get constant lectures about the new proposed ReID models and evaluate them under the CIL benchmark settings in time. Besides, we gladly take feedback to the CIL benchmark and welcome any contributions in terms of the new ReID models and corresponding evaluations. Please feel free to contact us, wangzq_2021@outlook.com .
 
 **TODO:**
-* cross-modality dataset, CUHK-PEDES
 * more detailed statistical evaluations
+* cross-modality preson Re-ID dataset, CUHK-PEDES
 
 ## Quick Start
 **1. Install dependencies**
@@ -41,7 +41,7 @@ sh ./scripts/eval_market.sh
 
 #### Corruption Transform
 
-The main code of corruption transform. (See contextual code in `./datasets/make_dataloader.py`, line 61)
+The main code of corruption transform. (See contextual code in `./datasets/make_dataloader.py`, line 59)
 
 ```python
 from imagecorruptions.corruptions import *
@@ -72,7 +72,7 @@ class corruption_transform(object):
         return img
 ```
 
-Evaluating corruption robustness can be realized on-the-fly by modifing the transform function uesed in test dataloader. (See details in ./datasets/make_dataloader.py, Line 236)
+Evaluating corruption robustness can be realized on-the-fly by modifing the transform function uesed in test dataloader. (See details in ./datasets/make_dataloader.py, Line 266)
 
 ```python
 val_with_corruption_transforms = T.Compose([
@@ -82,7 +82,7 @@ val_with_corruption_transforms = T.Compose([
 ```
 
 #### Rain details
-We introduce a rain corruption type, which is a common type of weather condition, but it is missed by the original corruption benchmark. (See details in `./datasets/make_dataloader.py`, Line 29)
+We introduce a rain corruption type, which is a common type of weather condition, but it is missed by the original corruption benchmark. (See details in `./datasets/make_dataloader.py`, Line 27)
 
 ```python
 def rain(image, severity=1):
