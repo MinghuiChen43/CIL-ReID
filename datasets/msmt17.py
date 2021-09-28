@@ -27,7 +27,7 @@ class MSMT17(BaseImageDataset):
     def __init__(self, root='', verbose=True, pid_begin=0, **kwargs):
         super(MSMT17, self).__init__()
         self.pid_begin = pid_begin
-        self.dataset_dir = '/data/wzq/MSMT17_V2'
+        self.dataset_dir = osp.join(root, self.dataset_dir)
         self.train_dir = osp.join(self.dataset_dir, 'mask_train_v2')
         self.test_dir = osp.join(self.dataset_dir, 'mask_test_v2')
         self.list_train_path = osp.join(self.dataset_dir, 'list_train.txt')

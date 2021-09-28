@@ -366,6 +366,7 @@ class ImageDataset(Dataset):
                 T.RandomCrop(self.cfg.INPUT.SIZE_TRAIN),
                 T.ToTensor(), random_erasing, re_erasing
             ])
+            
             post_transform = T.Compose([
                 T.ToTensor(),
             ])
