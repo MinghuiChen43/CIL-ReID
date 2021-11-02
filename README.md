@@ -3,6 +3,10 @@
  <img src='./imgs/overview_masked.png'>
 
 
+The official repository for  [Benchmarks for Corruption Invariant Person Re-identification
+](https://arxiv.org/abs/2111.00880), with exhaustive study on corruption invariant learning in single- and cross-modality ReID datasets, including [Market-1501-C](https://paperswithcode.com/dataset/market-1501-c), [CUHK03-C](https://paperswithcode.com/dataset/cuhk03-c), [MSMT17-C](https://paperswithcode.com/dataset/msmt17-c), [SYSU-MM01-C](https://paperswithcode.com/dataset/sysu-mm01-c), RegDB-C.
+
+
 ## Maintenance  Plan
 The benchmark will be maintained by the authors. We will get constant lectures about the new proposed ReID models and evaluate them under the CIL benchmark settings in time. Besides, we gladly take feedback to the CIL benchmark and welcome any contributions in terms of the new ReID models and corresponding evaluations. Please feel free to contact us, wangzq_2021@outlook.com .
 
