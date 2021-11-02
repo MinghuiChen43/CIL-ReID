@@ -11,6 +11,7 @@ The official repository for  [Benchmarks for Corruption Invariant Person Re-iden
 The benchmark will be maintained by the authors. We will get constant lectures about the new proposed ReID models and evaluate them under the CIL benchmark settings in time. Besides, we gladly take feedback to the CIL benchmark and welcome any contributions in terms of the new ReID models and corresponding evaluations. Please feel free to contact us, wangzq_2021@outlook.com .
 
 **TODO:**
+* other datasets configurations
 * more detailed statistical evaluations
 * checkpoints of the baseline models
 * cross-modality preson Re-ID dataset, CUHK-PEDES
