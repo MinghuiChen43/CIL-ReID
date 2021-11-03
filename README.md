@@ -1,8 +1,8 @@
 # Corruption Invariant Learning for Re-identification
  
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
-![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)
+![Python >=3.7](https://img.shields.io/badge/Python->=3.7-yellow.svg)
+![PyTorch >=1.6](https://img.shields.io/badge/PyTorch->=1.6-blue.svg)
 
  
  <img src='./imgs/overview_masked.png'>
