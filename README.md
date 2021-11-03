@@ -12,6 +12,7 @@ The benchmark will be maintained by the authors. We will get constant lectures a
 
 **TODO:**
 * other datasets configurations
+* get started tutorial
 * more detailed statistical evaluations
 * checkpoints of the baseline models
 * cross-modality preson Re-ID dataset, CUHK-PEDES
