@@ -1,6 +1,7 @@
 # Corruption Invariant Learning for Re-identification
  
  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+ [![PyPI pyversions](https://img.shields.io/pypi/pyversions/ansicolortags.svg)](https://pypi.python.org/pypi/ansicolortags/)
  
  <img src='./imgs/overview_masked.png'>
 
