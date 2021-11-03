@@ -1,5 +1,7 @@
 # Corruption Invariant Learning for Re-identification
  
+ [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+ 
  <img src='./imgs/overview_masked.png'>
 
 
