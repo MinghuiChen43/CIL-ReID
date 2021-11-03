@@ -485,3 +485,18 @@ def rain(image, severity=1):
         <td> 0.07 </td> <td> <b>5.28</b> </td> <td> 20.20 </td>
     </tr>
 </table>
+
+## Citation
+
+Kindly include a reference to this paper in your publications if it helps your research:
+```
+@misc{chen2021benchmarks,
+    title={Benchmarks for Corruption Invariant Person Re-identification},
+    author={Minghui Chen and Zhiqiang Wang and Feng Zheng},
+    year={2021},
+    eprint={2111.00880},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV}
+}
+```
+
