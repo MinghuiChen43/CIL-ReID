@@ -1,10 +1,11 @@
-# Corruption Invariant Learning for Re-identification
- 
 [![License: MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
 ![Python >=3.7](https://img.shields.io/badge/Python->=3.7-yellow.svg)
 ![PyTorch >=1.6](https://img.shields.io/badge/PyTorch->=1.6-blue.svg)
 
- 
+
+# Corruption Invariant Learning for Re-identification
+
+
  <img src='./imgs/overview_masked.png'>
 
 
