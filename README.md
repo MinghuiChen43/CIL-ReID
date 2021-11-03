@@ -4,7 +4,7 @@
 
 
 The official repository for  [Benchmarks for Corruption Invariant Person Re-identification
-](https://arxiv.org/abs/2111.00880) (NeurIPS 2021 Track on Datasets and Benchmarks), with exhaustive study on corruption invariant learning in single- and cross-modality ReID datasets, including [Market-1501-C](https://paperswithcode.com/dataset/market-1501-c), [CUHK03-C](https://paperswithcode.com/dataset/cuhk03-c), [MSMT17-C](https://paperswithcode.com/dataset/msmt17-c), [SYSU-MM01-C](https://paperswithcode.com/dataset/sysu-mm01-c), RegDB-C.
+](https://arxiv.org/abs/2111.00880) (NeurIPS 2021 Track on Datasets and Benchmarks), with exhaustive study on corruption invariant learning in single- and cross-modality ReID datasets, including [Market-1501-C](https://paperswithcode.com/dataset/market-1501-c), [CUHK03-C](https://paperswithcode.com/dataset/cuhk03-c), [MSMT17-C](https://paperswithcode.com/dataset/msmt17-c), [SYSU-MM01-C](https://paperswithcode.com/dataset/sysu-mm01-c), [RegDB-C](https://paperswithcode.com/dataset/regdb-c).
 
 
 ## Maintenance  Plan
