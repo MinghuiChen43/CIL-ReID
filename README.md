@@ -6,6 +6,12 @@
 The official repository for  [Benchmarks for Corruption Invariant Person Re-identification
 ](https://arxiv.org/abs/2111.00880) (NeurIPS 2021 Track on Datasets and Benchmarks), with exhaustive study on corruption invariant learning in single- and cross-modality ReID datasets, including [Market-1501-C](https://paperswithcode.com/dataset/market-1501-c), [CUHK03-C](https://paperswithcode.com/dataset/cuhk03-c), [MSMT17-C](https://paperswithcode.com/dataset/msmt17-c), [SYSU-MM01-C](https://paperswithcode.com/dataset/sysu-mm01-c), [RegDB-C](https://paperswithcode.com/dataset/regdb-c).
 
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/benchmarks-for-corruption-invariant-person-re/person-re-identification-on-market-1501-c)](https://paperswithcode.com/sota/person-re-identification-on-market-1501-c?p=benchmarks-for-corruption-invariant-person-re)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/benchmarks-for-corruption-invariant-person-re/person-re-identification-on-cuhk03-c)](https://paperswithcode.com/sota/person-re-identification-on-cuhk03-c?p=benchmarks-for-corruption-invariant-person-re)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/benchmarks-for-corruption-invariant-person-re/person-re-identification-on-msmt17-c)](https://paperswithcode.com/sota/person-re-identification-on-msmt17-c?p=benchmarks-for-corruption-invariant-person-re)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/benchmarks-for-corruption-invariant-person-re/person-re-identification-on-sysu-mm01-c)](https://paperswithcode.com/sota/person-re-identification-on-sysu-mm01-c?p=benchmarks-for-corruption-invariant-person-re)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/benchmarks-for-corruption-invariant-person-re/cross-modal-person-re-identification-on-regdb-1)](https://paperswithcode.com/sota/cross-modal-person-re-identification-on-regdb-1?p=benchmarks-for-corruption-invariant-person-re)
+
 
 ## Maintenance  Plan
 The benchmark will be maintained by the authors. We will get constant lectures about the new proposed ReID models and evaluate them under the CIL benchmark settings in time. Besides, we gladly take feedback to the CIL benchmark and welcome any contributions in terms of the new ReID models and corresponding evaluations. Please feel free to contact us, wangzq_2021@outlook.com .
