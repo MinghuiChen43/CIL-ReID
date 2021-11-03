@@ -1,4 +1,4 @@
-# Corruption Invariant Learning for Re-identification.
+# Corruption Invariant Learning for Re-identification
  
  <img src='./imgs/overview_masked.png'>
 
