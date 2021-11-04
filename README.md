@@ -29,7 +29,7 @@ The benchmark will be maintained by the authors. We will get constant lectures a
 - [ ] more detailed statistical evaluations
 - [ ] checkpoints of the baseline models
 - [ ] cross-modality preson Re-ID dataset, CUHK-PEDES
-- [ ] other ReID datasets, like VehicleID, VeRi-776, etc.
+- [ ] vehicle ReID datasets, like VehicleID, VeRi-776, etc.
 
 (Note: codebase from [TransReID](https://github.com/heshuting555/TransReID))
 
