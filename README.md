@@ -17,7 +17,7 @@ The official repository for  [Benchmarks for Corruption Invariant Person Re-iden
 
 
 ## Brief Introduction
-When deploying person re-identification (ReID) model in safety-critical applications, it is pivotal to understanding the robustness of the model against a diverse array of image corruptions. However, current evaluations of person ReID only consider the performance on clean datasets and ignore images in various corrupted scenarios. In this work, we comprehensively establish six ReID benchmarks for learning corruption invariant representation. 
+When deploying person re-identification (ReID) model in safety-critical applications, it is pivotal to understanding the robustness of the model against a diverse array of image corruptions. However, current evaluations of person ReID only consider the performance on clean datasets and ignore images in various corrupted scenarios. In this work, we comprehensively establish 5 ReID benchmarks for learning corruption invariant representation. 
 
 
 ## Maintenance  Plan
