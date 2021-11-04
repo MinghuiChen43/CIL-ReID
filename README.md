@@ -16,6 +16,10 @@ The official repository for  [Benchmarks for Corruption Invariant Person Re-iden
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/benchmarks-for-corruption-invariant-person-re/cross-modal-person-re-identification-on-regdb-1)](https://paperswithcode.com/sota/cross-modal-person-re-identification-on-regdb-1?p=benchmarks-for-corruption-invariant-person-re)
 
 
+## Breif Introduction
+When deploying person re-identification (ReID) model in safety-critical applications, it is pivotal to understanding the robustness of the model against a diverse array of image corruptions. However, current evaluations of person ReID only consider the performance on clean datasets and ignore images in various corrupted scenarios. In this work, we comprehensively establish six ReID benchmarks for learning corruption invariant representation. 
+
+
 ## Maintenance  Plan
 The benchmark will be maintained by the authors. We will get constant lectures about the new proposed ReID models and evaluate them under the CIL benchmark settings in time. Besides, we gladly take feedback to the CIL benchmark and welcome any contributions in terms of the new ReID models and corresponding evaluations. Please feel free to contact us, wangzq_2021@outlook.com .
 
