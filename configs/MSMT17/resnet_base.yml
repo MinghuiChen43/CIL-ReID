@@ -1,0 +1,67 @@
+MODEL:
+  PRETRAIN_CHOICE: 'imagenet'
+  PRETRAIN_PATH: '/home/wangzhiqiang/.cache/torch/hub/checkpoints/resnet50-19c8e357.pth'
+  METRIC_LOSS_TYPE: 'triplet'
+  NAME: 'resnet50'
+  NO_MARGIN: True
+  DEVICE_ID: ('5')
+  TRANSFORMER_TYPE: ''
+  STRIDE_SIZE: [12, 12]
+  SIE_CAMERA: True
+  SIE_COE: 3.0
+  JPM: True
+  LINEAR_BLOCK: False
+  RE_ARRANGE: True
+  GEM_POOL: True
+  WRTRIPLET: False
+  IF_LABELSMOOTH: 'on'
+  IF_WITH_CENTER: 'no'
+
+INPUT:
+  SIZE_TRAIN: [256, 128]
+  SIZE_TEST: [256, 128]
+  PROB: 0.5 # random horizontal flip
+  RE_PROB: 0.5 # random erasing
+  ERASING_TYPE: 'normal'
+  MIXING_COEFF: [1.0, 1.0]
+  PADDING: 10
+  PIXEL_MEAN: [0.5, 0.5, 0.5]
+  PIXEL_STD: [0.5, 0.5, 0.5]
+  MEAN_FEAT: False
+  SELF_ID: True
+
+
+DATASETS:
+  NAMES: ('msmt17')
+  ROOT_DIR: ('/data/wzq/')
+
+DATALOADER:
+  SAMPLER: 'softmax_triplet'
+  NUM_INSTANCE: 4
+  NUM_WORKERS: 8
+
+SOLVER:
+  OPTIMIZER_NAME: 'SGD'
+  MAX_EPOCHS: 120
+  BASE_LR: 0.008
+  IMS_PER_BATCH: 64
+  WARMUP_METHOD: 'linear'
+  LARGE_FC_LR: False
+  CHECKPOINT_PERIOD: 120
+  LOG_PERIOD: 50
+  EVAL_PERIOD: 120
+  WEIGHT_DECAY:  1e-4
+  WEIGHT_DECAY_BIAS: 1e-4
+  BIAS_LR_FACTOR: 2
+
+TEST:
+  EVAL: True
+  IMS_PER_BATCH: 256
+  RE_RANKING: False
+  WEIGHT: ''
+  NECK_FEAT: 'before'
+  FEAT_NORM: 'yes'
+
+OUTPUT_DIR: './logs/msmt17_resnet_base'
+
+
