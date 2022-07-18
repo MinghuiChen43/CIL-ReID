@@ -187,7 +187,7 @@ def rain(image, severity=1):
         <td> 0.05</td>  <td> 7.89</td> <td> 28.77</td>
     </tr>
     <tr>
-        <td> <a herf="https://drive.google.com/file/d/1JzTP0PXfme-tcsU5XTMG8FsUuZhO67QH/view?usp=sharing">CIL (ours) </a></td> 
+        <td> <a href="https://drive.google.com/file/d/1JzTP0PXfme-tcsU5XTMG8FsUuZhO67QH/view?usp=sharing">CIL (ours) </a></td> 
         <td> <b>12.45</b> </td> <td> 52.40 </td> <td> 76.10 </td>
         <td> <b>0.32 (0.03)</b> </td> <td> <b>15.33 (0.20)</b> </td> <td> <b>39.79 (0.45)</b> </td>
     </tr>
@@ -198,7 +198,7 @@ def rain(image, severity=1):
         <td> 0.46 </td>  <td> 3.45</td> <td> 5.90 </td>
     </tr>
     <tr>
-        <td> <a herf="https://drive.google.com/file/d/1VW6u2WB21FbFnaxV-7ZdFAcNG3IN757N/view?usp=sharing">CIL (ours) </a> </td> 
+        <td> <a href="https://drive.google.com/file/d/1VW6u2WB21FbFnaxV-7ZdFAcNG3IN757N/view?usp=sharing">CIL (ours) </a> </td> 
         <td> <b>53.87</b> </td> <td> <b>65.16</b> </td> <td> <b>67.29</b> </td>
         <td> <b>4.25 (0.39)</b> </td> <td> <b>16.33 (0.76)</b> </td> <td> <b>22.96 (1.04)</b> </td>
     </tr>
@@ -238,7 +238,7 @@ def rain(image, severity=1):
         <td> 35.39 </td>  <td> 40.98 </td> <td> 33.80 </td>
     </tr>
     <tr>
-        <td> <a herf="https://drive.google.com/file/d/1GeK7xeE6L_6ZbypvhUdSyqcZwxP4or7O/view?usp=sharing">CIL (ours) </a></td> 
+        <td> <a href="https://drive.google.com/file/d/1GeK7xeE6L_6ZbypvhUdSyqcZwxP4or7O/view?usp=sharing">CIL (ours) </a></td> 
         <td> <b>38.15</b> </td> <td> 47.64 </td> <td> 45.51 </td>
         <td> <b>22.48 (1.65)</b> </td>  <td> <b>35.92 (1.22)</b> </td> <td> <b>36.95 (0.67)</b> </td>
         <td> 57.41 </td> <td> 60.45 </td> <td> 50.98 </td>
@@ -253,7 +253,7 @@ def rain(image, severity=1):
         <td> 6.00 </td>  <td> 41.37 </td> <td> <b>67.54</b> </td>
     </tr>
     <tr>
-        <td> <a herf="https://drive.google.com/file/d/1xn5Kk3sIvXie-2FJGXX4Lwjhj56bJRsl/view?usp=sharing">CIL (ours) </a> </td> 
+        <td> <a href="https://drive.google.com/file/d/1xn5Kk3sIvXie-2FJGXX4Lwjhj56bJRsl/view?usp=sharing">CIL (ours) </a></td> 
         <td> <b>55.68</b> </td> <td> <b>69.75</b> </td> <td> 74.96 </td>
         <td> <b>38.66 (0.01)</b> </td>  <td> <b>49.76 (0.03)</b> </td> <td> <b>52.25 (0.03)</b> </td>
         <td> <b>55.50</b> </td> <td> <b>69.21</b> </td> <td> 74.95 </td>
