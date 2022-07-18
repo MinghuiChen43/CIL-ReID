@@ -26,10 +26,10 @@ When deploying person re-identification (ReID) model in safety-critical applicat
 The benchmark will be maintained by the authors. We will get constant lectures about the new proposed ReID models and evaluate them under the CIL benchmark settings in time. Besides, we gladly take feedback to the CIL benchmark and welcome any contributions in terms of the new ReID models and corresponding evaluations. Please feel free to contact us, wangzq_2021@outlook.com .
 
 **TODO:**
-- [ ] other datasets configurations
-- [ ] get started tutorial
+- [x] other datasets configurations
+- [x] get started tutorial
 - [ ] more detailed statistical evaluations
-- [ ] checkpoints of the baseline models
+- [x] checkpoints of the baseline models
 - [ ] cross-modality preson Re-ID dataset, CUHK-PEDES
 - [ ] vehicle ReID datasets, like VehicleID, VeRi-776, etc.
 
